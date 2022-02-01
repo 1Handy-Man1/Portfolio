@@ -1,0 +1,828 @@
+@forward './base/reset';
+@forward './base/global';
+/* dark shades of primary color*/
+/* The primary/main color */
+/* lighter shades of primary color */
+/* dark shades of secondary color*/
+/* secondary color */
+/* lighter shades of secondary color */
+/* darkest grey - used for headings */
+/* grey used for paragraphs */
+/* lightest grey - used for outlines */
+/* Other Colors used */
+/* .menu i {
+    @inlcude absolute(top 100% left 0)
+ } 
+ .sticky-bar {
+     @include fixed(top 0 left 0)
+ }
+ .submenu{
+     @include relative()
+ }
+ */
+/*
+  =============== 
+  Global Styles
+  ===============
+  */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+@font-face {
+  font-family: nicefont;
+  src: url(../font/BeautifulEveryTime-Dg4m.ttf);
+}
+
+@font-face {
+  font-family: Puzzlefont;
+  src: url(../font/FontsBombJigsaw-0aEr.ttf);
+  font-family: cat;
+  src: url(../font/Meows-VGWjy.ttf);
+}
+
+.divAll {
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
+
+li a {
+  color: #000000;
+}
+
+/*
+=============== 
+Scrollbar
+===============
+*/
+/* width */
+::-webkit-scrollbar {
+  width: 1.2rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #66b5f0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 100vw;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #cccccc;
+}
+
+/*
+=============== 
+Responsive media
+===============
+*/
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {
+    width: 8.33%;
+  }
+  .col-s-2 {
+    width: 16.66%;
+  }
+  .col-s-3 {
+    width: 25%;
+  }
+  .col-s-4 {
+    width: 33.33%;
+  }
+  .col-s-5 {
+    width: 41.66%;
+  }
+  .col-s-6 {
+    width: 50%;
+  }
+  .col-s-7 {
+    width: 58.33%;
+  }
+  .col-s-8 {
+    width: 66.66%;
+  }
+  .col-s-9 {
+    width: 75%;
+  }
+  .col-s-10 {
+    width: 83.33%;
+  }
+  .col-s-11 {
+    width: 91.66%;
+  }
+  .col-s-12 {
+    width: 100%;
+  }
+  .InfoHolder {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {
+    width: 8.33%;
+  }
+  .col-2 {
+    width: 16.66%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.33%;
+  }
+  .col-5 {
+    width: 41.66%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33%;
+  }
+  .col-8 {
+    width: 66.66%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-10 {
+    width: 83.33%;
+  }
+  .col-11 {
+    width: 91.66%;
+  }
+  .col-12 {
+    width: 100%;
+  }
+}
+
+/*
+=============== 
+Navbar
+===============
+*/
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: white;
+  border-radius: 25px;
+  margin: 0 5rem 0 5rem;
+  padding: .5rem;
+  -webkit-box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+}
+
+.NavLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#link-space {
+  color: #66B5F0;
+  margin-right: 5rem;
+  font-size: 3vw;
+  font-family: nicefont;
+}
+
+#link-space:hover {
+  color: #0091ff;
+  font-size: 3.2vw;
+}
+
+#link {
+  color: #66B5F0;
+  font-size: 3vw;
+  font-family: nicefont;
+}
+
+#link:hover {
+  color: #0091ff;
+  font-size: 3.2vw;
+}
+
+#logo {
+  width: 5vw;
+  height: 10vh;
+}
+
+#logo:hover {
+  width: 6.5vw;
+  height: 5.25vw;
+}
+
+/*
+=============== 
+About Page
+===============
+*/
+#actaulMe {
+  background-color: #ffffff;
+  padding: .5rem;
+  border-radius: 25px;
+  width: 35vw;
+  height: 35vw;
+  margin-left: 15px;
+  -webkit-box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+}
+
+#title {
+  color: white;
+  text-align: center;
+  font-size: 5vw;
+  font-family: nicefont;
+  margin-top: 3vw;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), 10px 10px 1px rgba(0, 0, 0, 0.2), 1px 3px 1px rgba(0, 0, 0, 0.2), 1px 4px 1px rgba(0, 0, 0, 0.2), 1px 5px 1px rgba(0, 0, 0, 0.2), 1px 6px 1px rgba(0, 0, 0, 0.2), 1px 7px 1px rgba(0, 0, 0, 0.2), 1px 8px 1px rgba(0, 0, 0, 0.2), 1px 9px 1px rgba(0, 0, 0, 0.2), 1px 10px 1px rgba(0, 0, 0, 0.2), 1px 18px 6px rgba(0, 0, 0, 0.2), 1px 22px 10px rgba(0, 0, 0, 0.2), 1px 25px 35px rgba(0, 0, 0, 0.2), 1px 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+.body {
+  background-color: #66B5F0;
+}
+
+.HolderAbout {
+  margin: 0 5rem 0 5rem;
+}
+
+.InfoHolder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#textAbout {
+  background-color: white;
+  color: #66B5F0;
+  font-size: 1.28vw;
+  font-family: nicefont;
+  border-radius: 25px;
+  padding: 2rem;
+  -webkit-box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+  margin: 0 4rem 0 0;
+}
+
+#textAbout2 {
+  background-color: white;
+  margin-top: 2rem;
+  color: #66B5F0;
+  font-size: 1.5vw;
+  font-family: nicefont;
+  border-radius: 15px;
+  padding: 2rem;
+  -webkit-box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+}
+
+/*
+=============== 
+Cloud/Home Page
+===============
+*/
+.sky {
+  position: absolute;
+  width: 96rem;
+  height: 45rem;
+  background: url(../images/clearSky.jpg);
+  background-size: cover;
+  -webkit-animation: animateEarth 20s linear infinite;
+          animation: animateEarth 20s linear infinite;
+}
+
+@-webkit-keyframes animateEarth {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: -95.5rem;
+  }
+}
+
+@keyframes animateEarth {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: -95.5rem;
+  }
+}
+
+.cloud {
+  margin-top: 70px;
+  width: 350px;
+  height: 120px;
+  background: #ECEFF1;
+  -webkit-box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+}
+
+.cloud::after, .cloud::before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  background: inherit;
+  border-radius: inherit;
+}
+
+.cloud::after {
+  width: 100px;
+  height: 100px;
+  top: -120px;
+  right: 130px;
+}
+
+.cloud::before {
+  width: 180px;
+  height: 180px;
+  top: -70px;
+  left: 130px;
+}
+
+.cloudrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-bottom: 5rem;
+  margin-left: 5rem;
+}
+
+.moveWord2 {
+  position: relative;
+  right: 18rem;
+  top: 5rem;
+}
+
+#WordCloud2 {
+  font-size: 3vw;
+  font-family: nicefont;
+  color: #66B5F0;
+}
+
+#WordCloud2:hover {
+  color: #0091ff;
+  font-size: 3.2vw;
+}
+
+.moveWord3 {
+  position: relative;
+  right: 12rem;
+  top: 3rem;
+}
+
+#WordCloud3 {
+  font-size: 3vw;
+  font-family: nicefont;
+  color: #66B5F0;
+}
+
+#WordCloud3:hover {
+  color: #0091ff;
+  font-size: 3.2vw;
+}
+
+.moveWord4 {
+  position: relative;
+  right: 15rem;
+  top: 5rem;
+}
+
+#WordCloud4 {
+  font-size: 3vw;
+  font-family: nicefont;
+  color: #66B5F0;
+}
+
+#WordCloud4:hover {
+  color: #0091ff;
+  font-size: 3.2vw;
+}
+
+.moveWord6 {
+  position: relative;
+  right: 15rem;
+  top: 5rem;
+}
+
+#WordCloud6 {
+  font-size: 3vw;
+  font-family: nicefont;
+  color: #66B5F0;
+}
+
+#WordCloud6:hover {
+  color: #0091ff;
+  font-size: 3.2vw;
+}
+
+#myFace {
+  border-radius: 45px 0 0 45px;
+  width: 20vw;
+  height: 40vh;
+}
+
+.holderInCloud {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 50px;
+  margin-right: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+}
+
+#ParaCloud {
+  font-family: nicefont;
+  color: #66B5F0;
+  font-size: 2vw;
+  margin-top: 2.4rem;
+  text-align: center;
+  margin-left: 2rem;
+}
+
+/*
+=============== 
+Footer Page
+===============
+*/
+.footerBar {
+  background-color: white;
+}
+
+#textFooter {
+  text-align: center;
+  color: #66B5F0;
+  font-size: 3vw;
+  font-family: nicefont;
+}
+
+.FooterHolder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-size: 1.5vw;
+  font-family: nicefont;
+  color: #66B5F0;
+}
+
+.ContactHolder {
+  text-align: center;
+}
+
+.InfoCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-bottom: 1vw;
+}
+
+#logoFooter {
+  width: 7vw;
+  height: 14vh;
+  margin-right: 1vw;
+}
+
+#Instagram {
+  margin-top: 2.5vw;
+  width: 5vw;
+  height: 10vh;
+}
+
+.FooterText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 4vw;
+}
+
+#CopyR-text {
+  font-size: 1.5vw;
+  font-family: nicefont;
+  color: #66B5F0;
+  margin-left: 35rem;
+}
+
+#secret {
+  font-size: .5vw;
+  font-family: nicefont;
+  color: #66B5F0;
+  margin-top: 20px;
+}
+
+/*
+=============== 
+History Page
+===============
+*/
+.Library-history {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: white;
+  border-radius: 25px;
+  padding: 2rem;
+  -webkit-box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+  margin: 0 5rem 0 5rem;
+}
+
+.Library-history #History-text {
+  padding-right: 2rem;
+}
+
+.MEC-history {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: white;
+  border-radius: 25px;
+  padding: 2rem;
+  -webkit-box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+  margin: 5rem 5rem 2rem 5rem;
+}
+
+.MEC-history #History-text {
+  padding-left: 2rem;
+  padding-top: 2rem;
+  font-size: 1.2vw;
+}
+
+#History-text {
+  color: #66B5F0;
+  font-size: 1.15vw;
+  font-family: nicefont;
+}
+
+#library-img {
+  margin-top: 1em;
+  border-radius: 25px;
+  width: 28vw;
+  height: 44vh;
+}
+
+/*
+=============== 
+Skill Page
+===============
+*/
+.Skill-Holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: white;
+  border-radius: 25px;
+  padding: 2rem;
+  -webkit-box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+  margin: 0 5rem 0 5rem;
+}
+
+#Img-css {
+  width: 18vw;
+  height: 50vh;
+}
+
+#Img-html {
+  width: 25vw;
+  height: 50vh;
+  margin: 0 -5em 0 -8em;
+}
+
+#Img-js {
+  width: 25vw;
+  height: 50vh;
+  margin: 0 -5em 0 -5em;
+}
+
+#GoalText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: white;
+  border-radius: 25px;
+  padding: 2rem;
+  -webkit-box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+  margin: 0 5rem 3rem 5rem;
+}
+
+p#GoalText {
+  color: #66B5F0;
+  font-size: 1.5vw;
+  font-family: nicefont;
+}
+
+/*
+=============== 
+Gallery Page
+===============
+*/
+/* This would be use for image positioning */
+.carousel {
+  background-color: white;
+  border-radius: 25px;
+  padding: 1em;
+  -webkit-box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 13px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 0 auto;
+  margin: 2rem 5rem 5rem 5rem;
+}
+
+.carousel__item {
+  background-color: #66B5F0;
+  display: none;
+  border-radius: 25px 25px 0 0;
+}
+
+.carousel__item--selected {
+  display: block;
+}
+
+.carousel__image {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 25px 25px 0 0;
+}
+
+/* Little circle as indicator on what slide you're on */
+.carousel__nav {
+  background-color: #66B5F0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px 0;
+  border-radius: 0 0 25px 25px;
+}
+
+.carousel__button {
+  border: 0;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 0 12px;
+  cursor: pointer;
+}
+
+.carousel__button--selected {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+/*# sourceMappingURL=main.css.map */
